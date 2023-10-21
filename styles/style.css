@@ -142,7 +142,6 @@
 .section-title {
   grid-column: 1 / 2;
   font-size: 1.125rem;
-  hyphens: auto;
   color: var(--accent-color);
 }
 
@@ -185,13 +184,6 @@
 
 .main__section a:focus-visible {
   outline: 1px solid var(--text-basic-color);
-}
-
-
-
-.header__theme-menu-button:focus-visible {
-  border: 1px solid transparent;
-  border-block-end: 1px solid var(--accent-color);
 }
 
 .main__section-what .main__block-list {
