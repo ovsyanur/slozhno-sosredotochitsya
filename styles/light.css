@@ -1,12 +1,82 @@
-/*
-  Специально для светлой темы при наличии класса.
-  Здесь окажутся стили, которые нужно переопределить принудительно,
-  переключая тему
-*/
+:root.theme-light {
+  --text-basic-color: rgb(53,52,40);
+  --title-basic-color: rgb(53,52,40);
+  --accent-color: rgb(255,141,203);
+  --bg-color: rgb(255,241,247);
+  --decor-color: rgb(255,194,230);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --text-basic-color: rgb(53,52,48);
+    --title-basic-color: rgb(53,52,48);
+    --accent-color: rgb(255,141,203);
+    --bg-color: rgb(255,241,247);
+    --decor-color: rgb(255,194,230);
+  }
+  
+  .page.theme_auto {
+    background-image: url(../images/cover-image-light.png); 
+  }
+
+  .page.theme_auto .header__rec {
+    display: none;
+  }
+
+  .page.theme_auto .decorated-zone::before,
+  .page.theme_auto .decorated-zone::after {
+    border-color: var(--text-basic-color);
+  }
+
+  .page.theme_auto .header__theme-menu-button {
+    color: var(--text-basic-color);
+  }
+
+  .page.theme_auto .header__theme-menu-button:hover {
+    --button-border-hover-color: rgba(50,49,45,0.4);
+  }
+
+  .page.theme_auto .header__theme-menu-button_active,
+  .page.theme_auto .header__theme-menu-button_active:hover {
+    border-color: var(--text-basic-color);
+  }
+
+  .page.theme_auto .section-title {
+    color: var(--text-basic-color);
+  }  
+}
 
 .page.theme_light {
-  /* сохраните этот селектор в приведённом виде.
-    Так стили написанные ниже будут иметь больший вес,
-    чем стили в медиазапросе предпочтений пользователя
-  */
+  --text-basic-color: rgb(53,52,48);
+  --title-basic-color: rgb(53,52,48);
+  --accent-color: rgb(255,141,203);
+  --bg-color: rgb(255,241,247);
+  --decor-color: rgb(255,194,230);
+  background-image: url(../images/cover-image-light.png); 
+}
+
+.page.theme_light .header__rec {
+  display: none;
+}
+
+.page.theme_light .decorated-zone::before,
+.page.theme_light .decorated-zone::after {
+  border-color: var(--text-basic-color);
+}
+
+.page.theme_light .header__theme-menu-button {
+  color: var(--text-basic-color);
+}
+
+.page.theme_light .header__theme-menu-button:hover {
+  --button-border-hover-color: rgba(50,49,45,0.4);
+}
+
+.page.theme_light .header__theme-menu-button_active,
+.page.theme_light .header__theme-menu-button_active:hover {
+  border-color: var(--text-basic-color);
+}
+
+.page.theme_light .section-title {
+  color: var(--text-basic-color);
 }
