@@ -1,7 +1,7 @@
 .page {
   font-size: 1.125rem;
   line-height: 1.3em;
-  font-family: 'IBM Plex mono', sans-serif;
+  font-family: 'IBM Plex mono', monospace;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -198,6 +198,10 @@
   flex-grow: 1;
 }
 
+.main__section-how .block-title {
+  margin-block-end: 20px;
+}
+
 .main__section-gallery {
   padding-block-end: 60px;
   grid-template-columns: 1fr;
@@ -214,6 +218,7 @@
   inline-size: 100%;
   block-size: 100%;
   object-fit: cover;
+  object-position: center;
   background-size: cover;
 }
 
@@ -249,8 +254,14 @@
   margin-inline-start: 0;
 }
 
-@media (width <= 768px) {
+@media (768px <= width < 1024px) { 
+  .main__section-why .main__block-list,
+  .main__section-how .main__block-list {
+    padding-inline-start: 7px;
+  }
+}
 
+@media (width <= 768px) {
   .decorated-zone {
     min-block-size: 480px;
   }  
@@ -269,8 +280,24 @@
   }
 } 
 
-@media (width <= 480px) {
+@media (width < 768px) {
+  .main__section {
+    padding: 40px 10px 10px 10px;
+    grid-template-columns: 1fr;
+  }
+    
+  .main__block-list {
+    grid-column: 1 / 2;
+  }
 
+  .main__gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+} 
+
+@media (width <= 480px) {
   .decorated-zone {
     padding: 10px;
   }
@@ -300,23 +327,8 @@
     inline-size: 100%;
   }
 
-  .main__section {
-    padding: 40px 10px 10px 10px;
-    grid-template-columns: 1fr;
-  }
-  
-  .main__block-list {
-    grid-column: 1 / 2;
-  }
-
   .main__section-gallery {
     padding-block-end: 40px;
     gap: 10px;
   } 
-
-  .main__gallery {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
 }
